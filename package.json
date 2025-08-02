@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "dev": "cd client && npm start",
+    "dev:services": "concurrently \"npm run dev:user\" \"npm run dev:marketplace\" \"npm run dev:education\"",
+    "dev:user": "cd services/user-service && npm run dev",
+    "dev:marketplace": "cd services/marketplace-service && npm run dev",
+    "dev:education": "cd services/educational-content-service && npm run dev",
+    "dev:all": "concurrently \"npm run dev:services\" \"npm run dev\"",
+    "install:all": "npm install && cd client && npm install && cd ../services/user-service && npm install && cd ../marketplace-service && npm install && cd ../educational-content-service && npm install",
+    "setup": "npm run install:all && npm run setup:db",
+    "setup:db": "echo 'Database setup would go here - for now using mock data'"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.11",
+    "concurrently": "^7.6.0"
+  }
+}
