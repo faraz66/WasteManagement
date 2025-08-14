@@ -1,0 +1,16 @@
+{
+  "name": "ecowaste-backend",
+  "version": "1.0.0",
+  "description": "EcoWaste Management Backend - Node.js microservices with modern architecture",
+  "scripts": {
+    "dev:backend": "concurrently \"npm run dev:user\" \"npm run dev:marketplace\" \"npm run dev:education\"",
+    "dev:user": "cd user-service && npm run dev",
+    "dev:marketplace": "cd marketplace-service && npm run dev",
+    "dev:education": "cd educational-content-service && npm run dev",
+    "install:all": "cd user-service && npm install && cd ../marketplace-service && npm install && cd ../educational-content-service && npm install",
+    "setup:db": "echo 'Database setup completed via startup script'"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
