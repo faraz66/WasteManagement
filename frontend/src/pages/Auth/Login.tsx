@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
-import { useAuth } from '../../contexts/AuthContext'
+import { useAuth } from '../../hooks/useAuth'
 import { Eye, EyeOff, Mail, Lock } from 'lucide-react'
 
 const Login: React.FC = () => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [email, setEmail] = useState('farazshaikh66@gmail.com')
+  const [password, setPassword] = useState('Loverspoint99')
   const [showPassword, setShowPassword] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
@@ -13,7 +13,7 @@ const Login: React.FC = () => {
   const navigate = useNavigate()
   const location = useLocation()
 
-  const from = location.state?.from?.pathname || '/dashboard'
+  const from = location.state?.from?.pathname || '/app/dashboard'
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()

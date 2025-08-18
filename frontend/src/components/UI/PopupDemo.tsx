@@ -15,9 +15,9 @@ import {
 const PopupDemo: React.FC = () => {
   const { modalState, openModal, closeModal } = useModal()
   const { alertState, showSuccess, showError, showWarning, showInfo, closeAlert } = useAlert()
-  const { confirmState, showConfirm, closeConfirm, confirmDelete, confirmSave, confirmLogout } = useConfirm()
+  const { confirmState, confirmDelete, confirmSave, confirmLogout, closeConfirm } = useConfirm()
   const { loadingState, showLoading, hideLoading, updateProgress } = useLoading()
-  const { showNotification, showSuccess: notifySuccess, showError: notifyError } = useNotifications()
+  const { showNotification, showSuccess: notifySuccess, showError: notifyError, showInfo: notifyInfo } = useNotifications()
 
   const handleProgressDemo = () => {
     showLoading({ message: 'Processing...', showProgress: true, progress: 0 })

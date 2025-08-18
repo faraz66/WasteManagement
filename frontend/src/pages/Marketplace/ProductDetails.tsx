@@ -13,7 +13,7 @@ import {
 } from 'lucide-react'
 
 const ProductDetails: React.FC = () => {
-  const { id } = useParams()
+  useParams<{ id: string }>()
   const [quantity, setQuantity] = useState(1)
   const [selectedImage, setSelectedImage] = useState(0)
 

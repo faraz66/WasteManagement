@@ -18,7 +18,7 @@ const PopupExample: React.FC = () => {
   const { alertState, showSuccess, showError, closeAlert } = useAlert()
   const { confirmState, confirmDelete, closeConfirm } = useConfirm()
   const { loadingState, showLoading, hideLoading } = useLoading()
-  const { showSuccess: notifySuccess, showError: notifyError, showInfo } = useNotifications()
+  const { showSuccess: notifySuccess, showInfo: notifyInfo } = useNotifications()
 
   const [items] = useState([
     { id: 1, name: 'Plastic Bottle', category: 'Recyclable' },
@@ -90,7 +90,7 @@ const PopupExample: React.FC = () => {
       'Bulk Action Complete',
       'All selected items have been processed successfully.',
       () => {
-        showInfo('Next Steps', 'You can now view the updated waste report in your dashboard.')
+        notifyInfo('Next Steps', 'You can now view the updated waste report in your dashboard.')
       }
     )
   }

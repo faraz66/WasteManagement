@@ -8,11 +8,15 @@ import Layout from './components/Layout/Layout'
 import AuthLayout from './components/Layout/AuthLayout'
 
 // Page Components
+import Landing from './pages/Landing/Landing'
 import Login from './pages/Auth/Login'
 import Register from './pages/Auth/Register'
+import ForgotPassword from './pages/Auth/ForgotPassword'
+import ResetPassword from './pages/Auth/ResetPassword'
 import Dashboard from './pages/Dashboard/Dashboard'
 import Marketplace from './pages/Marketplace/Marketplace'
 import ProductDetails from './pages/Marketplace/ProductDetails'
+import Community from './pages/Community/Community'
 import Education from './pages/Education/Education'
 import Profile from './pages/Profile/Profile'
 import ProtectedRoute from './components/Auth/ProtectedRoute'
@@ -24,24 +28,30 @@ function App() {
         <Router>
           <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
             <Routes>
+              {/* Landing Page */}
+              <Route path="/" element={<Landing />} />
+
               {/* Auth Routes */}
               <Route path="/auth" element={<AuthLayout />}>
                 <Route path="login" element={<Login />} />
                 <Route path="register" element={<Register />} />
+                <Route path="forgot-password" element={<ForgotPassword />} />
+                <Route path="reset-password" element={<ResetPassword />} />
               </Route>
 
               {/* Protected Routes */}
-              <Route path="/" element={<ProtectedRoute><Layout /></ProtectedRoute>}>
-                <Route index element={<Navigate to="/dashboard" replace />} />
+              <Route path="/app" element={<ProtectedRoute><Layout /></ProtectedRoute>}>
+                <Route index element={<Navigate to="/app/dashboard" replace />} />
                 <Route path="dashboard" element={<Dashboard />} />
                 <Route path="marketplace" element={<Marketplace />} />
                 <Route path="marketplace/:id" element={<ProductDetails />} />
+                <Route path="community" element={<Community />} />
                 <Route path="education" element={<Education />} />
                 <Route path="profile" element={<Profile />} />
               </Route>
 
               {/* Fallback */}
-              <Route path="*" element={<Navigate to="/dashboard" replace />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
             
             {/* Enhanced Toast with EcoWaste styling */}

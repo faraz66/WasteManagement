@@ -53,7 +53,7 @@ export const useModal = () => {
     if (modalState.onClose) {
       modalState.onClose()
     }
-  }, [modalState.onClose])
+  }, [modalState.onClose, modalState])
 
   return {
     modalState,

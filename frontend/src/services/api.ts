@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_BASE_URL = 'http://localhost:3001/api'
+const API_BASE_URL = import.meta.env.VITE_USER_SERVICE_URL || 'http://localhost:3001'
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -24,7 +24,8 @@ api.interceptors.response.use(
   (error) => {
     if (error.response?.status === 401) {
       localStorage.removeItem('token')
-      window.location.href = '/login'
+      // Redirect to correct auth login path
+      window.location.href = '/auth/login'
     }
     return Promise.reject(error)
   }
@@ -33,25 +34,34 @@ api.interceptors.response.use(
 // Auth API
 export const authAPI = {
   login: (email: string, password: string) =>
-    api.post('/auth/login', { email, password }),
+    api.post('/api/auth/login', { email, password }),
   
   register: (userData: {
     username: string
     email: string
     password: string
     user_type?: string
-  }) => api.post('/auth/register', userData),
+  }) => api.post('/api/auth/register', userData),
   
-  logout: () => api.post('/auth/logout'),
+  logout: () => api.post('/api/auth/logout'),
   
-  getProfile: () => api.get('/users/profile'),
+  getProfile: () => api.get('/api/users/profile'),
+  
+  forgotPassword: (email: string) =>
+    api.post('/api/auth/forgot-password', { email }),
+  
+  resetPassword: (token: string, password: string) =>
+    api.post('/api/auth/reset-password', { token, password }),
+  
+  validateResetToken: (token: string) =>
+    api.post('/api/auth/validate-reset-token', { token }),
 }
 
 // Users API
 export const usersAPI = {
-  getProfile: () => api.get('/users/profile'),
-  updateProfile: (data: any) => api.put('/users/profile', data),
-  getUsers: () => api.get('/users'),
+  getProfile: () => api.get('/api/users/profile'),
+  updateProfile: (data: Record<string, unknown>) => api.put('/api/users/profile', data),
+  getUsers: () => api.get('/api/users'),
 }
 
 // Marketplace API (assuming marketplace service runs on port 3002)
@@ -71,8 +81,8 @@ marketplaceAPI.interceptors.request.use((config) => {
 export const marketplace = {
   getProducts: () => marketplaceAPI.get('/products'),
   getProduct: (id: string) => marketplaceAPI.get(`/products/${id}`),
-  createProduct: (data: any) => marketplaceAPI.post('/products', data),
-  updateProduct: (id: string, data: any) => marketplaceAPI.put(`/products/${id}`, data),
+  createProduct: (data: Record<string, unknown>) => marketplaceAPI.post('/products', data),
+  updateProduct: (id: string, data: Record<string, unknown>) => marketplaceAPI.put(`/products/${id}`, data),
   deleteProduct: (id: string) => marketplaceAPI.delete(`/products/${id}`),
   
   getCart: () => marketplaceAPI.get('/cart'),
@@ -100,7 +110,60 @@ educationAPI.interceptors.request.use((config) => {
 export const education = {
   getContent: () => educationAPI.get('/content'),
   getContentById: (id: string) => educationAPI.get(`/content/${id}`),
-  createContent: (data: any) => educationAPI.post('/content', data),
+  createContent: (data: Record<string, unknown>) => educationAPI.post('/content', data),
+}
+
+// Community API - Using user service for now since community service may not be running
+const communityAPI = axios.create({
+  baseURL: 'http://localhost:3001/api',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+})
+
+communityAPI.interceptors.request.use((config) => {
+  const token = localStorage.getItem('token')
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`
+  }
+  return config
+})
+
+communityAPI.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response?.status === 401) {
+      localStorage.removeItem('token')
+      localStorage.removeItem('user')
+      window.location.href = '/auth/login'
+    }
+    return Promise.reject(error)
+  }
+)
+
+export const community = {
+  // Feed endpoints
+  getPersonalizedFeed: (params: Record<string, any>) => communityAPI.get('/feed/personalized', { params }),
+  getTrendingFeed: (params: Record<string, any>) => communityAPI.get('/feed/trending', { params }),
+  getLocalFeed: (params: Record<string, any>) => communityAPI.get('/feed/local', { params }),
+  getFollowingFeed: (params: Record<string, any>) => communityAPI.get('/feed/following', { params }),
+  getCategoryFeed: (category: string, params: Record<string, any>) => communityAPI.get(`/feed/category/${category}`, { params }),
+  
+  // Post endpoints
+  createPost: (data: FormData) => communityAPI.post('/posts', data, {
+    headers: { 'Content-Type': 'multipart/form-data' }
+  }),
+  searchPosts: (params: Record<string, any>) => communityAPI.get('/feed/search', { params }),
+  
+  // Interaction endpoints
+  recordInteraction: (postId: number, type: string) => communityAPI.post(`/posts/${postId}/interactions`, { type }),
+  
+  // User endpoints
+  getRecommendations: () => communityAPI.get('/users/recommendations'),
+  updatePreferences: (preferences: Record<string, any>) => communityAPI.put('/users/preferences', preferences),
+  
+  // Analytics endpoints
+  getFeedAnalytics: () => communityAPI.get('/feed/analytics'),
 }
 
 export default api

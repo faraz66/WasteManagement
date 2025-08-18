@@ -1,6 +1,6 @@
 import React from 'react'
 import { Navigate, useLocation } from 'react-router-dom'
-import { useAuth } from '../../contexts/AuthContext'
+import { useAuth } from '../../hooks/useAuth'
 
 interface ProtectedRouteProps {
   children: React.ReactNode
@@ -9,7 +9,21 @@ interface ProtectedRouteProps {
 const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
   const { isAuthenticated, loading } = useAuth()
   const location = useLocation()
+  
+  // Additional check for token in localStorage as fallback
+  const hasValidToken = () => {
+    const token = localStorage.getItem('token')
+    if (!token) return false
+    
+    try {
+      const payload = JSON.parse(atob(token.split('.')[1]))
+      return payload.exp > Date.now() / 1000
+    } catch {
+      return false
+    }
+  }
 
+  // Show loading while auth is being determined
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100">
@@ -21,6 +35,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
     )
   }
 
+  // Check authentication - user must be authenticated AND have valid token
   if (!isAuthenticated) {
     return <Navigate to="/auth/login" state={{ from: location }} replace />
   }

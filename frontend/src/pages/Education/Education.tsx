@@ -1,16 +1,13 @@
 import React, { useState } from 'react'
 import { 
   BookOpen, 
-  Play, 
   Clock, 
   Users, 
-  Award, 
-  Search,
-  Filter,
-  Leaf,
-  Recycle,
+  Lightbulb,
+  Award,
   Globe,
-  Lightbulb
+  Search,
+  Filter
 } from 'lucide-react'
 
 const Education: React.FC = () => {

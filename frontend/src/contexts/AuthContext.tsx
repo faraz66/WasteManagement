@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react'
+import React, { createContext, useState, useEffect, type ReactNode } from 'react'
 import { authAPI } from '../services/api'
 import toast from 'react-hot-toast'
 
@@ -9,7 +9,7 @@ interface User {
   role: string
 }
 
-interface AuthContextType {
+export interface AuthContextType {
   user: User | null
   login: (email: string, password: string) => Promise<boolean>
   register: (userData: { name: string; email: string; password: string }) => Promise<boolean>
@@ -18,15 +18,7 @@ interface AuthContextType {
   isAuthenticated: boolean
 }
 
-const AuthContext = createContext<AuthContextType | undefined>(undefined)
-
-export const useAuth = () => {
-  const context = useContext(AuthContext)
-  if (context === undefined) {
-    throw new Error('useAuth must be used within an AuthProvider')
-  }
-  return context
-}
+export const AuthContext = createContext<AuthContextType | undefined>(undefined)
 
 interface AuthProviderProps {
   children: ReactNode
@@ -41,6 +33,18 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       const token = localStorage.getItem('token')
       if (token) {
         try {
+          // Check if token is expired before making API call
+          const tokenPayload = JSON.parse(atob(token.split('.')[1]))
+          const currentTime = Date.now() / 1000
+          
+          if (tokenPayload.exp < currentTime) {
+            // Token is expired
+            localStorage.removeItem('token')
+            setUser(null)
+            setLoading(false)
+            return
+          }
+          
           const response = await authAPI.getProfile()
           const backendUser = response.data.user || response.data
           
@@ -55,13 +59,32 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           setUser(userData)
         } catch (error) {
           localStorage.removeItem('token')
+          setUser(null)
           console.error('Auth initialization failed:', error)
+          // Don't show error toast during initialization
         }
+      } else {
+        setUser(null)
       }
       setLoading(false)
     }
 
     initAuth()
+    
+    // Listen for storage changes (e.g., logout in another tab)
+    const handleStorageChange = (e: StorageEvent) => {
+      if (e.key === 'token') {
+        if (!e.newValue) {
+          setUser(null)
+        } else {
+          // Token was added/changed, re-initialize
+          initAuth()
+        }
+      }
+    }
+    
+    window.addEventListener('storage', handleStorageChange)
+    return () => window.removeEventListener('storage', handleStorageChange)
   }, [])
 
   const login = async (email: string, password: string): Promise<boolean> => {
@@ -82,8 +105,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       setUser(userData)
       toast.success(`Welcome back, ${userData.name}!`)
       return true
-    } catch (error: any) {
-      const message = error.response?.data?.message || 'Login failed'
+    } catch (error: unknown) {
+      const message = (error as { response?: { data?: { message?: string } } }).response?.data?.message || 'Login failed'
       toast.error(message)
       return false
     } finally {
@@ -115,10 +138,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       
       localStorage.setItem('token', token)
       setUser(newUser)
-      toast.success(`Welcome to EcoWaste, ${newUser.name}!`)
       return true
-    } catch (error: any) {
-      const message = error.response?.data?.message || 'Registration failed'
+    } catch (error: unknown) {
+      const message = (error as { response?: { data?: { message?: string } } }).response?.data?.message || 'Registration failed'
       toast.error(message)
       return false
     } finally {
@@ -130,6 +152,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     localStorage.removeItem('token')
     setUser(null)
     toast.success('Logged out successfully')
+    // Redirect to landing page after logout
+    window.location.href = '/'
   }
 
   const value: AuthContextType = {

@@ -3,21 +3,23 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const path = require('path');
 
-// Load environment variables
-dotenv.config();
+// Load environment variables from backend directory
+dotenv.config({ path: path.join(__dirname, '../.env') });
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Enable CORS for all requests
 app.use(cors({
-  origin: ['http://localhost:5176', 'http://localhost:5175', 'http://localhost:5174', 'http://localhost:5173', 'http://localhost:3004', 'http://localhost:3000', 'http://localhost:3003'],
+  origin: ['http://localhost:5177', 'http://localhost:5176', 'http://localhost:5175', 'http://localhost:5174', 'http://localhost:5173', 'http://localhost:3004', 'http://localhost:3000', 'http://localhost:3003'],
   credentials: true
 }));
 
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+
 
 // Routes
 const authRoutes = require('./src/routes/authRoutes');

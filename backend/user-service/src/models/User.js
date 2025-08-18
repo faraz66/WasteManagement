@@ -32,6 +32,31 @@ const User = {
       [username, id]
     );
     return result.rows[0];
+  },
+
+  async updateResetToken(id, resetToken, resetTokenExpiry) {
+    const result = await query(
+      'UPDATE users SET reset_token = $1, reset_token_expiry = $2 WHERE id = $3 RETURNING id',
+      [resetToken, resetTokenExpiry, id]
+    );
+    return result.rows[0];
+  },
+
+  async findByResetToken(resetToken) {
+    const result = await query(
+      'SELECT * FROM users WHERE reset_token = $1',
+      [resetToken]
+    );
+    return result.rows[0];
+  },
+
+  async resetPassword(id, newPassword) {
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
+    const result = await query(
+      'UPDATE users SET password_hash = $1, reset_token = NULL, reset_token_expiry = NULL WHERE id = $2 RETURNING id',
+      [hashedPassword, id]
+    );
+    return result.rows[0];
   }
 };
 

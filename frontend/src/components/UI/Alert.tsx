@@ -1,5 +1,5 @@
 import React from 'react'
-import { AlertTriangle, CheckCircle, Info, X, XCircle } from 'lucide-react'
+import { AlertTriangle, CheckCircle, Info, XCircle } from 'lucide-react';
 
 interface AlertProps {
   isOpen: boolean

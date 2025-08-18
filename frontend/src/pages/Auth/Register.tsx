@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { useAuth } from '../../contexts/AuthContext'
-import { Eye, EyeOff, Mail, Lock, User } from 'lucide-react'
+import { useAuth } from '../../hooks/useAuth'
+import { Eye, EyeOff, Mail, Lock, User, CheckCircle } from 'lucide-react'
+import Modal from '../../components/UI/Modal'
 
 const Register: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -14,6 +15,7 @@ const Register: React.FC = () => {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [errors, setErrors] = useState<Record<string, string>>({})
+  const [showSuccessModal, setShowSuccessModal] = useState(false)
 
   const { register } = useAuth()
   const navigate = useNavigate()
@@ -68,18 +70,24 @@ const Register: React.FC = () => {
     })
 
     if (success) {
-      navigate('/dashboard')
+      setShowSuccessModal(true)
     }
     
     setIsLoading(false)
   }
 
+  const handleSuccessModalClose = () => {
+    setShowSuccessModal(false)
+    navigate('/auth/login')
+  }
+
   return (
-    <div className="space-y-8">
-      <div className="text-center">
-        <h2 className="text-3xl font-bold text-slate-900 mb-2">Create Account</h2>
-        <p className="text-slate-600">Join EcoWaste and start making a difference</p>
-      </div>
+    <>
+      <div className="space-y-8">
+        <div className="text-center">
+          <h2 className="text-3xl font-bold text-slate-900 mb-2">Create Account</h2>
+          <p className="text-slate-600">Join EcoWaste and start making a difference</p>
+        </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="space-y-4">
@@ -229,18 +237,53 @@ const Register: React.FC = () => {
         </button>
       </form>
 
-      <div className="text-center">
-        <p className="text-slate-600">
-          Already have an account?{' '}
-          <Link
-            to="/auth/login"
-            className="text-primary-600 hover:text-primary-700 font-semibold"
-          >
-            Sign in here
-          </Link>
-        </p>
+        <div className="text-center">
+          <p className="text-slate-600">
+            Already have an account?{' '}
+            <Link
+              to="/auth/login"
+              className="text-primary-600 hover:text-primary-700 font-semibold"
+            >
+              Sign in here
+            </Link>
+          </p>
+        </div>
       </div>
-    </div>
+
+      {/* Registration Success Modal */}
+      <Modal
+        isOpen={showSuccessModal}
+        onClose={handleSuccessModalClose}
+        title="Registration Successful!"
+        size="md"
+        closeOnOverlayClick={false}
+        showCloseButton={false}
+      >
+        <div className="text-center space-y-6">
+          <div className="flex justify-center">
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
+              <CheckCircle className="w-8 h-8 text-green-600" />
+            </div>
+          </div>
+          
+          <div className="space-y-2">
+            <h3 className="text-xl font-semibold text-slate-900">
+              Welcome to EcoWaste!
+            </h3>
+            <p className="text-slate-600">
+              Your account has been created successfully. You can now sign in with your credentials to start managing your waste operations.
+            </p>
+          </div>
+
+          <button
+            onClick={handleSuccessModalClose}
+            className="btn-primary w-full"
+          >
+            Continue to Sign In
+          </button>
+        </div>
+      </Modal>
+    </>
   )
 }
 

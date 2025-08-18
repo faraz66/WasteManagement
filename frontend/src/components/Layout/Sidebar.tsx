@@ -1,22 +1,24 @@
 import React from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
-import { 
-  LayoutDashboard, 
-  ShoppingBag, 
-  BookOpen, 
-  User, 
+import {
+  LayoutDashboard,
+  ShoppingBag,
+  BookOpen,
+  User,
+  Users,
   Recycle,
   Settings,
   LogOut
 } from 'lucide-react'
-import { useAuth } from '../../contexts/AuthContext'
+import { useAuth } from '../../hooks/useAuth'
 import { cn } from '../../lib/utils'
 
 const navigation = [
-  { name: 'Dashboard', href: '/dashboard', icon: LayoutDashboard },
-  { name: 'Marketplace', href: '/marketplace', icon: ShoppingBag },
-  { name: 'Education', href: '/education', icon: BookOpen },
-  { name: 'Profile', href: '/profile', icon: User },
+  { name: 'Dashboard', href: '/app/dashboard', icon: LayoutDashboard },
+  { name: 'Marketplace', href: '/app/marketplace', icon: ShoppingBag },
+  { name: 'Community', href: '/app/community', icon: Users },
+  { name: 'Education', href: '/app/education', icon: BookOpen },
+  { name: 'Profile', href: '/app/profile', icon: User },
 ]
 
 const Sidebar: React.FC = () => {
