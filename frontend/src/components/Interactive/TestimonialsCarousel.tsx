@@ -169,7 +169,7 @@ const TestimonialsCarousel = () => {
                   { label: 'Waste Reduced', value: currentTestimonial.stats.wasteReduced, color: 'from-green-400 to-emerald-500' },
                   { label: 'Cost Saved', value: currentTestimonial.stats.costSaved, color: 'from-blue-400 to-cyan-500' },
                   { label: 'Efficiency', value: currentTestimonial.stats.efficiency, color: 'from-purple-400 to-pink-500' }
-                ].map((stat, index) => (
+                ].map((stat) => (
                   <div key={stat.label} className="text-center group">
                     <div className={`w-20 h-20 mx-auto mb-4 bg-gradient-to-r ${stat.color} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                       <span className="text-2xl font-bold text-white">{stat.value}</span>

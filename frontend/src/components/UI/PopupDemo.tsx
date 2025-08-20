@@ -120,8 +120,6 @@ const PopupDemo: React.FC = () => {
           <button
             onClick={() => openModal({
               size: 'sm',
-              showCloseButton: false,
-              closeOnOverlayClick: false,
               content: (
                 <div className="text-center space-y-4">
                   <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto">
@@ -143,6 +141,21 @@ const PopupDemo: React.FC = () => {
             className="btn-secondary"
           >
             Custom Modal
+          </button>
+
+          <button
+            onClick={() => openModal({
+              title: 'No Close Button',
+              size: 'sm',
+              content: (
+                <div className="text-center space-y-4">
+                  <p className="text-slate-600">This modal has no close button.</p>
+                </div>
+              )
+            })}
+            className="btn-secondary"
+          >
+            No Close Button
           </button>
         </div>
       </div>
@@ -342,9 +355,11 @@ const PopupDemo: React.FC = () => {
       </div>
 
       {/* Render Popups */}
-      <Modal {...modalState} onClose={closeModal} />
+      <Modal {...modalState} onClose={closeModal}>
+        {modalState.content}
+      </Modal>
       <Alert {...alertState} onClose={closeAlert} />
-      <ConfirmDialog {...confirmState} onClose={closeConfirm} />
+      <ConfirmDialog {...confirmState} onClose={closeConfirm} onConfirm={confirmState.onConfirm || (() => {})} />
       <LoadingModal {...loadingState} />
     </div>
   )

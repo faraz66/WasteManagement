@@ -154,7 +154,7 @@ const PostCard: React.FC<PostCardProps> = ({ post, onInteraction }) => {
               <div className="flex items-center space-x-2">
                 <span className="font-semibold text-slate-900">{post.author_name}</span>
                 {post.author_type === 'expert' && (
-                  <Award className="h-4 w-4 text-yellow-500" title="Verified Expert" />
+                  <Award className="h-4 w-4 text-yellow-500" />
                 )}
                 {post.is_verified && (
                   <div className="h-4 w-4 bg-blue-500 rounded-full flex items-center justify-center">

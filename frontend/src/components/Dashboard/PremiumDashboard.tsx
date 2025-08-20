@@ -1,14 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { 
   TrendingUp, 
   Users, 
   Award, 
   Target, 
   Leaf, 
-  Recycle,
-  BarChart3,
   Calendar,
-  MapPin,
   Star,
   Trophy,
   Zap,
@@ -48,7 +45,7 @@ interface Challenge {
 }
 
 const PremiumDashboard: React.FC = () => {
-  const [stats, setStats] = useState<DashboardStats>({
+  const [stats] = useState<DashboardStats>({
     totalImpact: 1250,
     communityRank: 47,
     streakDays: 12,
@@ -57,7 +54,7 @@ const PremiumDashboard: React.FC = () => {
     engagementRate: 87
   })
 
-  const [achievements, setAchievements] = useState<Achievement[]>([
+  const [achievements] = useState<Achievement[]>([
     {
       id: '1',
       title: 'Eco Warrior',
@@ -90,7 +87,7 @@ const PremiumDashboard: React.FC = () => {
     }
   ])
 
-  const [challenges, setChallenges] = useState<Challenge[]>([
+  const [challenges] = useState<Challenge[]>([
     {
       id: '1',
       title: 'Daily Green Action',

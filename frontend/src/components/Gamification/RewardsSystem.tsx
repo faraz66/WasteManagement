@@ -10,8 +10,7 @@ import {
   Gem,
   Coins,
   ShoppingBag,
-  Calendar,
-  TrendingUp
+  Calendar
 } from 'lucide-react'
 
 interface Reward {
@@ -173,8 +172,8 @@ const RewardsSystem: React.FC = () => {
           <div className="mt-6">
             <h4 className="font-semibold text-slate-900 mb-3">Current Level Benefits:</h4>
             <div className="flex flex-wrap gap-2">
-              {userLevel.benefits.map((benefit, index) => (
-                <span key={index} className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">
+              {userLevel.benefits.map((benefit) => (
+                <span key={benefit} className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">
                   {benefit}
                 </span>
               ))}
@@ -240,7 +239,7 @@ const RewardsSystem: React.FC = () => {
         <div className="bg-white rounded-2xl shadow-lg p-8">
           <h2 className="text-2xl font-bold text-slate-900 mb-6">Level Progression</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {levels.map((level, index) => (
+            {levels.map((level) => (
               <div key={level.level} className={`p-4 rounded-xl border-2 transition-all duration-200 ${
                 level.level <= userLevel.current 
                   ? 'bg-gradient-to-br from-purple-50 to-pink-50 border-purple-200' 
