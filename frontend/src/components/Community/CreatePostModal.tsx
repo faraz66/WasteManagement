@@ -1,22 +1,12 @@
 import React, { useState, useRef } from 'react'
 import { 
   X, 
-  Image, 
-  MapPin, 
-  Calendar, 
-  Clock, 
-  Leaf, 
   Tag,
   Upload,
   AlertCircle,
-  Lightbulb,
   Hammer,
-  HelpCircle,
   CalendarDays,
-  Newspaper,
-  Trophy
 } from 'lucide-react'
-import { useAuth } from '../../hooks/useAuth'
 import { community } from '../../services/api'
 
 interface CreatePostModalProps {
@@ -25,7 +15,7 @@ interface CreatePostModalProps {
 }
 
 const CreatePostModal: React.FC<CreatePostModalProps> = ({ onClose, onPostCreated }) => {
-  const { user } = useAuth()
+  // const { user } = useAuth()
   const fileInputRef = useRef<HTMLInputElement>(null)
   
   const [formData, setFormData] = useState({
@@ -47,9 +37,9 @@ const CreatePostModal: React.FC<CreatePostModalProps> = ({ onClose, onPostCreate
   const [tagInput, setTagInput] = useState('')
   const [loading, setLoading] = useState(false)
   const [errors, setErrors] = useState<Record<string, string>>({})
-  const [aiSuggestions, setAiSuggestions] = useState<string[]>([])
-  const [impactScore, setImpactScore] = useState(0)
-  const [showAiHelper, setShowAiHelper] = useState(false)
+  // const [aiSuggestions, setAiSuggestions] = useState<string[]>([])
+  // const [impactScore, setImpactScore] = useState(0)
+  // const [showAiHelper, setShowAiHelper] = useState(false)
 
   const postTypes = [
     { value: 'general', label: 'General', icon: '📝', description: 'Share thoughts and updates', color: 'bg-blue-50 border-blue-200 text-blue-800' },

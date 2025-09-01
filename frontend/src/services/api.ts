@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_BASE_URL = import.meta.env.VITE_USER_SERVICE_URL || 'http://localhost:3001'
+const API_BASE_URL = import.meta.env.VITE_API_URL || "https://ecocircle.in/api"
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -24,7 +24,6 @@ api.interceptors.response.use(
   (error) => {
     if (error.response?.status === 401) {
       localStorage.removeItem('token')
-      // Redirect to correct auth login path
       window.location.href = '/auth/login'
     }
     return Promise.reject(error)
@@ -34,39 +33,26 @@ api.interceptors.response.use(
 // Auth API
 export const authAPI = {
   login: (email: string, password: string) =>
-    api.post('/api/auth/login', { email, password }),
-  
-  register: (userData: {
-    username: string
-    email: string
-    password: string
-    user_type?: string
-  }) => api.post('/api/auth/register', userData),
-  
-  logout: () => api.post('/api/auth/logout'),
-  
-  getProfile: () => api.get('/api/users/profile'),
-  
-  forgotPassword: (email: string) =>
-    api.post('/api/auth/forgot-password', { email }),
-  
-  resetPassword: (token: string, password: string) =>
-    api.post('/api/auth/reset-password', { token, password }),
-  
-  validateResetToken: (token: string) =>
-    api.post('/api/auth/validate-reset-token', { token }),
+    api.post('/auth/login', { email, password }),
+  register: (data: any) => api.post('/auth/register', data),
+  logout: () => api.post('/auth/logout'),
+  getProfile: () => api.get('/users/profile'),
+  forgotPassword: (email: string) => api.post('/auth/forgot-password', { email }),
+  resetPassword: (token: string, password: string) => 
+    api.post('/auth/reset-password', { token, password }),
+  validateResetToken: (token: string) => 
+    api.post('/auth/validate-reset-token', { token })
 }
 
 // Users API
 export const usersAPI = {
-  getProfile: () => api.get('/api/users/profile'),
-  updateProfile: (data: Record<string, unknown>) => api.put('/api/users/profile', data),
-  getUsers: () => api.get('/api/users'),
+  getProfile: () => api.get('/users/profile'),
+  updateProfile: (data: any) => api.put('/users/profile', data)
 }
 
-// Marketplace API (assuming marketplace service runs on port 3002)
+// Marketplace API - Use the same server
 const marketplaceAPI = axios.create({
-  baseURL: 'http://localhost:3002/api',
+  baseURL: API_BASE_URL,
   headers: { 'Content-Type': 'application/json' },
 })
 
@@ -79,23 +65,19 @@ marketplaceAPI.interceptors.request.use((config) => {
 })
 
 export const marketplace = {
-  getProducts: () => marketplaceAPI.get('/products'),
-  getProduct: (id: string) => marketplaceAPI.get(`/products/${id}`),
-  createProduct: (data: Record<string, unknown>) => marketplaceAPI.post('/products', data),
-  updateProduct: (id: string, data: Record<string, unknown>) => marketplaceAPI.put(`/products/${id}`, data),
-  deleteProduct: (id: string) => marketplaceAPI.delete(`/products/${id}`),
-  
-  getCart: () => marketplaceAPI.get('/cart'),
+  getProducts: (params?: any) => marketplaceAPI.get('/marketplace/products', { params }),
+  getProduct: (id: string) => marketplaceAPI.get(`/marketplace/products/${id}`),
+  getCart: () => marketplaceAPI.get('/marketplace/cart'),
   addToCart: (productId: string, quantity: number) =>
-    marketplaceAPI.post('/cart', { productId, quantity }),
+    marketplaceAPI.post('/marketplace/cart', { productId, quantity }),
   updateCartItem: (itemId: string, quantity: number) =>
-    marketplaceAPI.put(`/cart/${itemId}`, { quantity }),
-  removeFromCart: (itemId: string) => marketplaceAPI.delete(`/cart/${itemId}`),
+    marketplaceAPI.put(`/marketplace/cart/${itemId}`, { quantity }),
+  removeFromCart: (itemId: string) => marketplaceAPI.delete(`/marketplace/cart/${itemId}`)
 }
 
-// Education API (assuming education service runs on port 3003)
+// Education API - Use the same server
 const educationAPI = axios.create({
-  baseURL: 'http://localhost:3003/api',
+  baseURL: API_BASE_URL,
   headers: { 'Content-Type': 'application/json' },
 })
 
@@ -108,14 +90,13 @@ educationAPI.interceptors.request.use((config) => {
 })
 
 export const education = {
-  getContent: () => educationAPI.get('/content'),
-  getContentById: (id: string) => educationAPI.get(`/content/${id}`),
-  createContent: (data: Record<string, unknown>) => educationAPI.post('/content', data),
+  getContent: (params?: any) => educationAPI.get('/education/content', { params }),
+  getContentById: (id: string) => educationAPI.get(`/education/content/${id}`)
 }
 
-// Community API - Using user service for now since community service may not be running
+// Community API - Use the main API base URL
 const communityAPI = axios.create({
-  baseURL: 'http://localhost:3001/api',
+  baseURL: API_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },
@@ -142,28 +123,19 @@ communityAPI.interceptors.response.use(
 )
 
 export const community = {
-  // Feed endpoints
   getPersonalizedFeed: (params: Record<string, any>) => communityAPI.get('/feed/personalized', { params }),
   getTrendingFeed: (params: Record<string, any>) => communityAPI.get('/feed/trending', { params }),
   getLocalFeed: (params: Record<string, any>) => communityAPI.get('/feed/local', { params }),
   getFollowingFeed: (params: Record<string, any>) => communityAPI.get('/feed/following', { params }),
   getCategoryFeed: (category: string, params: Record<string, any>) => communityAPI.get(`/feed/category/${category}`, { params }),
-  
-  // Post endpoints
   createPost: (data: FormData) => communityAPI.post('/posts', data, {
     headers: { 'Content-Type': 'multipart/form-data' }
   }),
   searchPosts: (params: Record<string, any>) => communityAPI.get('/feed/search', { params }),
-  
-  // Interaction endpoints
-  recordInteraction: (postId: number, type: string) => communityAPI.post(`/posts/${postId}/interactions`, { type }),
-  
-  // User endpoints
+  recordInteraction: (postId: string, type: string) => communityAPI.post(`/posts/${postId}/interactions`, { type }),
   getRecommendations: () => communityAPI.get('/users/recommendations'),
-  updatePreferences: (preferences: Record<string, any>) => communityAPI.put('/users/preferences', preferences),
-  
-  // Analytics endpoints
-  getFeedAnalytics: () => communityAPI.get('/feed/analytics'),
+  updatePreferences: (data: any) => communityAPI.put('/users/preferences', data),
+  getFeedAnalytics: () => communityAPI.get('/feed/analytics')
 }
 
 export default api

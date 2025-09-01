@@ -40,7 +40,7 @@ const PopupDemo: React.FC = () => {
   return (
     <div className="p-8 space-y-6 max-w-4xl mx-auto">
       <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold gradient-text mb-2">EcoWaste Popup Components</h1>
+        <h1 className="text-3xl font-bold gradient-text mb-2">EcoCircle Popup Components</h1>
         <p className="text-slate-600">Modern, accessible popup components for your application</p>
       </div>
 
@@ -50,11 +50,11 @@ const PopupDemo: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
           <button
             onClick={() => openModal({
-              title: 'Welcome to EcoWaste',
+              title: 'Welcome to EcoCircle',
               size: 'md',
               content: (
                 <div className="space-y-4">
-                  <p className="text-slate-600">This is a beautiful modal with EcoWaste styling.</p>
+                  <p className="text-slate-600">This is a beautiful modal with EcoCircle styling.</p>
                   <div className="flex gap-3">
                     <button className="btn-primary flex-1">Get Started</button>
                     <button className="btn-secondary flex-1" onClick={closeModal}>Close</button>

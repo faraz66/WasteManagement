@@ -82,7 +82,7 @@ const Dashboard: React.FC = () => {
       <div className="bg-gradient-to-r from-primary-600 to-primary-800 rounded-2xl p-8 text-white">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-3xl font-bold mb-2">Welcome to Your EcoWaste Dashboard</h1>
+            <h1 className="text-3xl font-bold mb-2">Welcome to Your EcoCircle Dashboard</h1>
             <p className="text-primary-100 text-lg">
               Track your environmental impact and manage your waste processing activities
             </p>

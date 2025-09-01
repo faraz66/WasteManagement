@@ -1,0 +1,342 @@
+🚀 User Service running on port 3001
+📊 Environment: production
+Error: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+    at /var/www/ecocircle/backend/user-service/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.findByEmail (/var/www/ecocircle/backend/user-service/src/models/User.js:15:20)
+    at async exports.loginUser (/var/www/ecocircle/backend/user-service/src/controllers/authController.js:46:18)
+Error: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+    at /var/www/ecocircle/backend/user-service/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.findByEmail (/var/www/ecocircle/backend/user-service/src/models/User.js:15:20)
+    at async exports.loginUser (/var/www/ecocircle/backend/user-service/src/controllers/authController.js:46:18)
+🚀 User Service running on port 3001
+📊 Environment: production
+Error: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+    at /var/www/ecocircle/backend/user-service/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.findByEmail (/var/www/ecocircle/backend/user-service/src/models/User.js:15:20)
+    at async exports.loginUser (/var/www/ecocircle/backend/user-service/src/controllers/authController.js:46:18)
+🚀 User Service running on port 3001
+📊 Environment: production
+Error: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+    at /var/www/ecocircle/backend/user-service/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.findByEmail (/var/www/ecocircle/backend/user-service/src/models/User.js:15:20)
+    at async exports.loginUser (/var/www/ecocircle/backend/user-service/src/controllers/authController.js:46:18)
+🚀 User Service running on port 3001
+📊 Environment: production
+Error: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+    at /var/www/ecocircle/backend/user-service/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.findByEmail (/var/www/ecocircle/backend/user-service/src/models/User.js:15:20)
+    at async exports.loginUser (/var/www/ecocircle/backend/user-service/src/controllers/authController.js:46:18)
+Error: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+    at /var/www/ecocircle/backend/user-service/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.findByEmail (/var/www/ecocircle/backend/user-service/src/models/User.js:15:20)
+    at async exports.loginUser (/var/www/ecocircle/backend/user-service/src/controllers/authController.js:46:18)
+🚀 User Service running on port 3001
+📊 Environment: production
+Error: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+    at /var/www/ecocircle/backend/user-service/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.findByEmail (/var/www/ecocircle/backend/user-service/src/models/User.js:15:20)
+    at async exports.loginUser (/var/www/ecocircle/backend/user-service/src/controllers/authController.js:46:18)
+Error: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+    at /var/www/ecocircle/backend/user-service/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.findByEmail (/var/www/ecocircle/backend/user-service/src/models/User.js:15:20)
+    at async exports.loginUser (/var/www/ecocircle/backend/user-service/src/controllers/authController.js:46:18)
+🚀 User Service running on port 3001
+📊 Environment: production
+Error: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+    at /var/www/ecocircle/backend/user-service/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.findByEmail (/var/www/ecocircle/backend/user-service/src/models/User.js:15:20)
+    at async exports.loginUser (/var/www/ecocircle/backend/user-service/src/controllers/authController.js:46:18)
+Error: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+    at /var/www/ecocircle/backend/user-service/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.findByEmail (/var/www/ecocircle/backend/user-service/src/models/User.js:15:20)
+    at async exports.loginUser (/var/www/ecocircle/backend/user-service/src/controllers/authController.js:46:18)
+🚀 User Service running on port 3001
+📊 Environment: production
+Error: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+    at /var/www/ecocircle/backend/user-service/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.findByEmail (/var/www/ecocircle/backend/user-service/src/models/User.js:15:20)
+    at async exports.loginUser (/var/www/ecocircle/backend/user-service/src/controllers/authController.js:46:18)
+Error: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+    at /var/www/ecocircle/backend/user-service/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.findByEmail (/var/www/ecocircle/backend/user-service/src/models/User.js:15:20)
+    at async exports.loginUser (/var/www/ecocircle/backend/user-service/src/controllers/authController.js:46:18)
+🚀 User Service running on port 3001
+📊 Environment: production
+error: relation "users" does not exist
+    at /var/www/ecocircle/backend/user-service/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.findByEmail (/var/www/ecocircle/backend/user-service/src/models/User.js:15:20)
+    at async exports.loginUser (/var/www/ecocircle/backend/user-service/src/controllers/authController.js:46:18) {
+  length: 104,
+  severity: 'ERROR',
+  code: '42P01',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '1449',
+  routine: 'parserOpenTable'
+}
+error: relation "users" does not exist
+    at /var/www/ecocircle/backend/user-service/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.findByEmail (/var/www/ecocircle/backend/user-service/src/models/User.js:15:20)
+    at async exports.loginUser (/var/www/ecocircle/backend/user-service/src/controllers/authController.js:46:18) {
+  length: 104,
+  severity: 'ERROR',
+  code: '42P01',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '1449',
+  routine: 'parserOpenTable'
+}
+error: permission denied for table users
+    at /var/www/ecocircle/backend/user-service/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.findByEmail (/var/www/ecocircle/backend/user-service/src/models/User.js:15:20)
+    at async exports.loginUser (/var/www/ecocircle/backend/user-service/src/controllers/authController.js:46:18) {
+  length: 93,
+  severity: 'ERROR',
+  code: '42501',
+  detail: undefined,
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'aclchk.c',
+  line: '2843',
+  routine: 'aclcheck_error'
+}
+error: permission denied for table users
+    at /var/www/ecocircle/backend/user-service/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.findByEmail (/var/www/ecocircle/backend/user-service/src/models/User.js:15:20)
+    at async exports.registerUser (/var/www/ecocircle/backend/user-service/src/controllers/authController.js:19:16) {
+  length: 93,
+  severity: 'ERROR',
+  code: '42501',
+  detail: undefined,
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'aclchk.c',
+  line: '2843',
+  routine: 'aclcheck_error'
+}
+🚀 User Service running on port 3001
+📊 Environment: production
+🚀 User Service running on port 3001
+📊 Environment: production
+🚀 User Service running on port 3001
+📊 Environment: production
+🚀 User Service running on port 3001
+📊 Environment: production
+📧 User found: test@example.com, generating reset token...
+❌ Forgot password error: column "reset_token" of relation "users" does not exist
+Full error details: error: column "reset_token" of relation "users" does not exist
+    at /var/www/ecocircle/backend/user-service/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.updateResetToken (/var/www/ecocircle/backend/user-service/src/models/User.js:38:20)
+    at async exports.forgotPassword (/var/www/ecocircle/backend/user-service/src/controllers/authController.js:129:5) {
+  length: 131,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '18',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'analyze.c',
+  line: '2528',
+  routine: 'transformUpdateTargetList'
+}
+📧 User found: test@example.com, generating reset token...
+❌ Forgot password error: column "reset_token" of relation "users" does not exist
+Full error details: error: column "reset_token" of relation "users" does not exist
+    at /var/www/ecocircle/backend/user-service/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.updateResetToken (/var/www/ecocircle/backend/user-service/src/models/User.js:38:20)
+    at async exports.forgotPassword (/var/www/ecocircle/backend/user-service/src/controllers/authController.js:129:5) {
+  length: 131,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '18',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'analyze.c',
+  line: '2528',
+  routine: 'transformUpdateTargetList'
+}
+📧 User found: test@example.com, generating reset token...
+💾 Reset token saved to database
+🔗 Reset URL generated: http://31.97.236.47/auth/reset-password?token=3243fd2f10884a4c336d3129c467dd8de5b09ac233d362580024b626ac5d2743
+
+🔗 DEVELOPMENT MODE - Password Reset Link:
+   http://31.97.236.47/auth/reset-password?token=3243fd2f10884a4c336d3129c467dd8de5b09ac233d362580024b626ac5d2743
+   Copy this link to reset the password
+
+📤 Attempting to send password reset email...
+📧 Sending email via Python script to: test@example.com
+✅ Password reset email sent successfully via Python!
+   Python script completed successfully
+📧 User found: farazshaikh66@gmail.com, generating reset token...
+💾 Reset token saved to database
+🔗 Reset URL generated: http://31.97.236.47/auth/reset-password?token=e00c36c33c24cd3c116b80ea64f287d4193531f49cfc3962d0896ecf123ca9a0
+
+🔗 DEVELOPMENT MODE - Password Reset Link:
+   http://31.97.236.47/auth/reset-password?token=e00c36c33c24cd3c116b80ea64f287d4193531f49cfc3962d0896ecf123ca9a0
+   Copy this link to reset the password
+
+📤 Attempting to send password reset email...
+📧 Sending email via Python script to: farazshaikh66@gmail.com
+✅ Password reset email sent successfully via Python!
+   Python script completed successfully
+📧 User found: farazshaikh66@gmail.com, generating reset token...
+💾 Reset token saved to database
+🔗 Reset URL generated: http://31.97.236.47/auth/reset-password?token=282993616170891125876384d8ca667370f2d3880f0f05ab5a98dcc7011f7353
+
+🔗 DEVELOPMENT MODE - Password Reset Link:
+   http://31.97.236.47/auth/reset-password?token=282993616170891125876384d8ca667370f2d3880f0f05ab5a98dcc7011f7353
+   Copy this link to reset the password
+
+📤 Attempting to send password reset email...
+📧 Sending email via Python script to: farazshaikh66@gmail.com
+✅ Password reset email sent successfully via Python!
+   Python script completed successfully
+📧 User found: farazshaikh66@gmail.com, generating reset token...
+💾 Reset token saved to database
+🔗 Reset URL generated: http://31.97.236.47/auth/reset-password?token=26fde083216c76bd4663d1d88c21c53733707518fc0e38a3496f250771d16786
+
+🔗 DEVELOPMENT MODE - Password Reset Link:
+   http://31.97.236.47/auth/reset-password?token=26fde083216c76bd4663d1d88c21c53733707518fc0e38a3496f250771d16786
+   Copy this link to reset the password
+
+📤 Attempting to send password reset email...
+📧 Sending email via Python script to: farazshaikh66@gmail.com
+✅ Password reset email sent successfully via Python!
+   Python script completed successfully
+🚀 User Service running on port 3001
+📊 Environment: production
+📧 User found: test@example.com, generating reset token...
+💾 Reset token saved to database
+🔗 Reset URL generated: http://31.97.236.47/auth/reset-password?token=ba253331ea70b7eaf9b60298314372e16892cfbe244a5d21adc8490d8304a914
+
+🔗 DEVELOPMENT MODE - Password Reset Link:
+   http://31.97.236.47/auth/reset-password?token=ba253331ea70b7eaf9b60298314372e16892cfbe244a5d21adc8490d8304a914
+   Copy this link to reset the password
+
+📤 Attempting to send password reset email...
+📧 Sending email via Python script to: test@example.com
+✅ Password reset email sent successfully via Python!
+   Python script completed successfully
+📧 User found: farazshaikh66@gmail.com, generating reset token...
+💾 Reset token saved to database
+🔗 Reset URL generated: http://31.97.236.47/auth/reset-password?token=f839c5f409cc173dbd82b1ff02cb149c292798906cab81d3df5b51f7c3607665
+
+🔗 DEVELOPMENT MODE - Password Reset Link:
+   http://31.97.236.47/auth/reset-password?token=f839c5f409cc173dbd82b1ff02cb149c292798906cab81d3df5b51f7c3607665
+   Copy this link to reset the password
+
+📤 Attempting to send password reset email...
+📧 Sending email via Python script to: farazshaikh66@gmail.com
+✅ Password reset email sent successfully via Python!
+   Python script completed successfully
+🚀 User Service running on port 3001
+📊 Environment: production
+📧 User found: farazshaikh66@gmail.com, generating reset token...
+💾 Reset token saved to database
+🔗 Reset URL generated: https://ecocircle.in/auth/reset-password?token=5edea1a01af0d60d5dfca7b43053bc0dfc7096f73886a59ac2fa525acc844685
+
+🔗 DEVELOPMENT MODE - Password Reset Link:
+   https://ecocircle.in/auth/reset-password?token=5edea1a01af0d60d5dfca7b43053bc0dfc7096f73886a59ac2fa525acc844685
+   Copy this link to reset the password
+
+📤 Attempting to send password reset email...
+📧 Sending email via Python script to: farazshaikh66@gmail.com
+✅ Password reset email sent successfully via Python!
+   Python script completed successfully
+🚀 User Service running on port 3001
+📊 Environment: production
+📧 User found: farazshaikh66@gmail.com, generating reset token...
+💾 Reset token saved to database
+🔗 Reset URL generated: https://ecocircle.in/auth/reset-password?token=7037845303bcbaec8c89110d3a172cec1572686a7dd8ed48c70197a44d9eddff
+
+🔗 DEVELOPMENT MODE - Password Reset Link:
+   https://ecocircle.in/auth/reset-password?token=7037845303bcbaec8c89110d3a172cec1572686a7dd8ed48c70197a44d9eddff
+   Copy this link to reset the password
+
+📤 Attempting to send password reset email...
+📧 Sending email via Python script to: farazshaikh66@gmail.com
+✅ Password reset email sent successfully via Python!
+   Python script completed successfully
+🚀 User Service running on port 3001
+📊 Environment: production
+📧 User found: farazshaikh66@gmail.com, generating reset token...
+💾 Reset token saved to database
+🔗 Reset URL generated: https://ecocircle.in/auth/reset-password?token=c5519560aca1bd56dd8b163086221960d8fd8f9a6ac10102961b5fcd5230ce7b
+
+🔗 DEVELOPMENT MODE - Password Reset Link:
+   https://ecocircle.in/auth/reset-password?token=c5519560aca1bd56dd8b163086221960d8fd8f9a6ac10102961b5fcd5230ce7b
+   Copy this link to reset the password
+
+📤 Attempting to send password reset email...
+📧 Sending email via Python script to: farazshaikh66@gmail.com
+✅ Password reset email sent successfully via Python!
+   Python script completed successfully

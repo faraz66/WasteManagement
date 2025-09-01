@@ -4,8 +4,8 @@ import { useAuth } from '../../hooks/useAuth'
 import { Eye, EyeOff, Mail, Lock } from 'lucide-react'
 
 const Login: React.FC = () => {
-  const [email, setEmail] = useState('farazshaikh66@gmail.com')
-  const [password, setPassword] = useState('Loverspoint99')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
@@ -31,7 +31,7 @@ const Login: React.FC = () => {
     <div className="space-y-8">
       <div className="text-center">
         <h2 className="text-3xl font-bold text-slate-900 mb-2">Welcome Back</h2>
-        <p className="text-slate-600">Sign in to your EcoWaste account</p>
+        <p className="text-slate-600">Sign in to your EcoCircle account</p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">

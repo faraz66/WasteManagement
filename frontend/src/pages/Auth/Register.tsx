@@ -86,7 +86,7 @@ const Register: React.FC = () => {
       <div className="space-y-8">
         <div className="text-center">
           <h2 className="text-3xl font-bold text-slate-900 mb-2">Create Account</h2>
-          <p className="text-slate-600">Join EcoWaste and start making a difference</p>
+          <p className="text-slate-600">Join EcoCircle and start making a difference</p>
         </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">
@@ -268,7 +268,7 @@ const Register: React.FC = () => {
           
           <div className="space-y-2">
             <h3 className="text-xl font-semibold text-slate-900">
-              Welcome to EcoWaste!
+              Welcome to EcoCircle!
             </h3>
             <p className="text-slate-600">
               Your account has been created successfully. You can now sign in with your credentials to start managing your waste operations.

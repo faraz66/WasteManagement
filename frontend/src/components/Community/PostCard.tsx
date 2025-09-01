@@ -9,7 +9,6 @@ import {
   Leaf,
   Award,
   Calendar,
-  Users,
   ExternalLink,
   MoreHorizontal,
   Flag,

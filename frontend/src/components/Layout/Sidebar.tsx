@@ -34,7 +34,7 @@ const Sidebar: React.FC = () => {
             <Recycle className="h-6 w-6 text-white" />
           </div>
           <div>
-            <h1 className="text-xl font-bold gradient-text">EcoWaste</h1>
+            <h1 className="text-xl font-bold gradient-text">EcoCircle</h1>
             <p className="text-xs text-slate-500">Sustainable Solutions</p>
           </div>
         </div>

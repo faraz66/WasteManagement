@@ -1,0 +1,37 @@
+(node:9309) Warning: Accessing non-existent property 'io' of module exports inside circular dependency
+(Use `node --trace-warnings ...` to show where the warning was created)
+🌱 EcoWaste Community Service running on port 3004
+🚀 Real-time features enabled with Socket.IO
+📊 Environment: production
+🔗 Available at: http://localhost:3004
+::1 - - [20/Aug/2025:10:01:31 +0000] "GET /health HTTP/1.1" 404 351 "-" "curl/8.12.1"
+(node:17576) Warning: Accessing non-existent property 'io' of module exports inside circular dependency
+(Use `node --trace-warnings ...` to show where the warning was created)
+🌱 EcoWaste Community Service running on port 3004
+🚀 Real-time features enabled with Socket.IO
+📊 Environment: production
+🔗 Available at: http://localhost:3004
+(node:17824) Warning: Accessing non-existent property 'io' of module exports inside circular dependency
+(Use `node --trace-warnings ...` to show where the warning was created)
+🌱 EcoWaste Community Service running on port 3004
+🚀 Real-time features enabled with Socket.IO
+📊 Environment: production
+🔗 Available at: http://localhost:3004
+(node:19158) Warning: Accessing non-existent property 'io' of module exports inside circular dependency
+(Use `node --trace-warnings ...` to show where the warning was created)
+🌱 EcoWaste Community Service running on port 3004
+🚀 Real-time features enabled with Socket.IO
+📊 Environment: production
+🔗 Available at: http://localhost:3004
+(node:19769) Warning: Accessing non-existent property 'io' of module exports inside circular dependency
+(Use `node --trace-warnings ...` to show where the warning was created)
+🌱 EcoWaste Community Service running on port 3004
+🚀 Real-time features enabled with Socket.IO
+📊 Environment: production
+🔗 Available at: http://localhost:3004
+(node:20288) Warning: Accessing non-existent property 'io' of module exports inside circular dependency
+(Use `node --trace-warnings ...` to show where the warning was created)
+🌱 EcoWaste Community Service running on port 3004
+🚀 Real-time features enabled with Socket.IO
+📊 Environment: production
+🔗 Available at: http://localhost:3004

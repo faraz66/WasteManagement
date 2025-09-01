@@ -13,7 +13,7 @@ const Header: React.FC = () => {
     if (path.startsWith('/marketplace')) return 'Marketplace'
     if (path === '/education') return 'Education Hub'
     if (path === '/profile') return 'Profile'
-    return 'EcoWaste'
+    return 'EcoCircle'
   }
 
   const getGreeting = () => {

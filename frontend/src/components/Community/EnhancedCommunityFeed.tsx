@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { 
   TrendingUp, 
   Users, 
@@ -108,7 +108,7 @@ const EnhancedCommunityFeed: React.FC = () => {
   ])
 
   const [activeFilter, setActiveFilter] = useState('trending')
-  const [showFilters, setShowFilters] = useState(false)
+  // const [showFilters, setShowFilters] = useState(false)
 
   const getBadgeIcon = (badge: string | null) => {
     switch (badge) {
@@ -280,7 +280,7 @@ const EnhancedCommunityFeed: React.FC = () => {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-2">
                       <div className="p-2 bg-green-100 rounded-lg">
-                        <Leaf className="h-5 w-5 text-green-600" />
+                        <div className="h-5 w-5 bg-green-600 rounded-full" />
                       </div>
                       <div>
                         <div className="text-sm font-medium text-green-800">Environmental Impact Score</div>

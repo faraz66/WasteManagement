@@ -1,0 +1,200 @@
+Error: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+    at /var/www/ecocircle/backend/user-service/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.findByEmail (/var/www/ecocircle/backend/user-service/src/models/User.js:15:20)
+    at async exports.loginUser (/var/www/ecocircle/backend/user-service/src/controllers/authController.js:46:18)
+Error: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+    at /var/www/ecocircle/backend/user-service/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.findByEmail (/var/www/ecocircle/backend/user-service/src/models/User.js:15:20)
+    at async exports.loginUser (/var/www/ecocircle/backend/user-service/src/controllers/authController.js:46:18)
+Error: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+    at /var/www/ecocircle/backend/user-service/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.findByEmail (/var/www/ecocircle/backend/user-service/src/models/User.js:15:20)
+    at async exports.loginUser (/var/www/ecocircle/backend/user-service/src/controllers/authController.js:46:18)
+Error: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+    at /var/www/ecocircle/backend/user-service/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.findByEmail (/var/www/ecocircle/backend/user-service/src/models/User.js:15:20)
+    at async exports.loginUser (/var/www/ecocircle/backend/user-service/src/controllers/authController.js:46:18)
+Error: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+    at /var/www/ecocircle/backend/user-service/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.findByEmail (/var/www/ecocircle/backend/user-service/src/models/User.js:15:20)
+    at async exports.loginUser (/var/www/ecocircle/backend/user-service/src/controllers/authController.js:46:18)
+Error: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+    at /var/www/ecocircle/backend/user-service/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.findByEmail (/var/www/ecocircle/backend/user-service/src/models/User.js:15:20)
+    at async exports.loginUser (/var/www/ecocircle/backend/user-service/src/controllers/authController.js:46:18)
+Error: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+    at /var/www/ecocircle/backend/user-service/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.findByEmail (/var/www/ecocircle/backend/user-service/src/models/User.js:15:20)
+    at async exports.loginUser (/var/www/ecocircle/backend/user-service/src/controllers/authController.js:46:18)
+Error: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+    at /var/www/ecocircle/backend/user-service/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.findByEmail (/var/www/ecocircle/backend/user-service/src/models/User.js:15:20)
+    at async exports.loginUser (/var/www/ecocircle/backend/user-service/src/controllers/authController.js:46:18)
+Error: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+    at /var/www/ecocircle/backend/user-service/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.findByEmail (/var/www/ecocircle/backend/user-service/src/models/User.js:15:20)
+    at async exports.loginUser (/var/www/ecocircle/backend/user-service/src/controllers/authController.js:46:18)
+Error: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+    at /var/www/ecocircle/backend/user-service/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.findByEmail (/var/www/ecocircle/backend/user-service/src/models/User.js:15:20)
+    at async exports.loginUser (/var/www/ecocircle/backend/user-service/src/controllers/authController.js:46:18)
+Error: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+    at /var/www/ecocircle/backend/user-service/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.findByEmail (/var/www/ecocircle/backend/user-service/src/models/User.js:15:20)
+    at async exports.loginUser (/var/www/ecocircle/backend/user-service/src/controllers/authController.js:46:18)
+Error: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+    at /var/www/ecocircle/backend/user-service/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.findByEmail (/var/www/ecocircle/backend/user-service/src/models/User.js:15:20)
+    at async exports.loginUser (/var/www/ecocircle/backend/user-service/src/controllers/authController.js:46:18)
+error: relation "users" does not exist
+    at /var/www/ecocircle/backend/user-service/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.findByEmail (/var/www/ecocircle/backend/user-service/src/models/User.js:15:20)
+    at async exports.loginUser (/var/www/ecocircle/backend/user-service/src/controllers/authController.js:46:18) {
+  length: 104,
+  severity: 'ERROR',
+  code: '42P01',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '1449',
+  routine: 'parserOpenTable'
+}
+error: relation "users" does not exist
+    at /var/www/ecocircle/backend/user-service/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.findByEmail (/var/www/ecocircle/backend/user-service/src/models/User.js:15:20)
+    at async exports.loginUser (/var/www/ecocircle/backend/user-service/src/controllers/authController.js:46:18) {
+  length: 104,
+  severity: 'ERROR',
+  code: '42P01',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '1449',
+  routine: 'parserOpenTable'
+}
+error: permission denied for table users
+    at /var/www/ecocircle/backend/user-service/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.findByEmail (/var/www/ecocircle/backend/user-service/src/models/User.js:15:20)
+    at async exports.loginUser (/var/www/ecocircle/backend/user-service/src/controllers/authController.js:46:18) {
+  length: 93,
+  severity: 'ERROR',
+  code: '42501',
+  detail: undefined,
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'aclchk.c',
+  line: '2843',
+  routine: 'aclcheck_error'
+}
+error: permission denied for table users
+    at /var/www/ecocircle/backend/user-service/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.findByEmail (/var/www/ecocircle/backend/user-service/src/models/User.js:15:20)
+    at async exports.registerUser (/var/www/ecocircle/backend/user-service/src/controllers/authController.js:19:16) {
+  length: 93,
+  severity: 'ERROR',
+  code: '42501',
+  detail: undefined,
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'aclchk.c',
+  line: '2843',
+  routine: 'aclcheck_error'
+}
+❌ Forgot password error: column "reset_token" of relation "users" does not exist
+Full error details: error: column "reset_token" of relation "users" does not exist
+    at /var/www/ecocircle/backend/user-service/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.updateResetToken (/var/www/ecocircle/backend/user-service/src/models/User.js:38:20)
+    at async exports.forgotPassword (/var/www/ecocircle/backend/user-service/src/controllers/authController.js:129:5) {
+  length: 131,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '18',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'analyze.c',
+  line: '2528',
+  routine: 'transformUpdateTargetList'
+}
+❌ Forgot password error: column "reset_token" of relation "users" does not exist
+Full error details: error: column "reset_token" of relation "users" does not exist
+    at /var/www/ecocircle/backend/user-service/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.updateResetToken (/var/www/ecocircle/backend/user-service/src/models/User.js:38:20)
+    at async exports.forgotPassword (/var/www/ecocircle/backend/user-service/src/controllers/authController.js:129:5) {
+  length: 131,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '18',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'analyze.c',
+  line: '2528',
+  routine: 'transformUpdateTargetList'
+}

@@ -54,7 +54,7 @@ function App() {
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
             
-            {/* Enhanced Toast with EcoWaste styling */}
+            {/* Enhanced Toast with EcoCircle styling */}
             <Toaster
               position="top-right"
               toastOptions={{

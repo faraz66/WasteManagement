@@ -19,7 +19,7 @@ const AuthLayout: React.FC = () => {
             <div className="p-3 bg-white/20 rounded-2xl backdrop-blur-sm">
               <Recycle className="h-8 w-8" />
             </div>
-            <h1 className="text-3xl font-bold">EcoWaste</h1>
+            <h1 className="text-3xl font-bold">EcoCircle</h1>
           </div>
           
           <h2 className="text-4xl font-bold mb-6 leading-tight">
@@ -62,7 +62,7 @@ const AuthLayout: React.FC = () => {
             <div className="p-3 bg-primary-600 rounded-2xl">
               <Recycle className="h-8 w-8 text-white" />
             </div>
-            <h1 className="text-3xl font-bold gradient-text">EcoWaste</h1>
+            <h1 className="text-3xl font-bold gradient-text">EcoCircle</h1>
           </div>
           
           <Outlet />

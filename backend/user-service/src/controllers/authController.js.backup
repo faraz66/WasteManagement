@@ -72,33 +72,21 @@ const generateResetToken = () => {
 };
 
 // Send email using Python script (working solution)
-// Send email using Hostinger SMTP (working solution)
-const sendEmailViaHostinger = async (recipientEmail, resetUrl) => {
-  const nodemailer = require("nodemailer");
-  
-  const transporter = nodemailer.createTransport({
-    host: process.env.EMAIL_HOST,
-    port: parseInt(process.env.EMAIL_PORT),
-    secure: process.env.EMAIL_SECURE === "true",
-    auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASSWORD
-    }
-  });
-  
-  const emailContent = `
-    <h2>🔐 EcoCircle Password Reset</h2>
-    <p>Click the link below to reset your password:</p>
-    <a href="${resetUrl}" style="background: #10b981; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px;">Reset Password</a>
-    <p>This link expires in 15 minutes.</p>
-    <p>🌱 EcoCircle Team</p>
-  `;
-  
-  return await transporter.sendMail({
-    from: `${process.env.EMAIL_FROM_NAME} <${process.env.EMAIL_USER}>`,
-    to: recipientEmail,
-    subject: "🔐 EcoCircle - Password Reset Request",
-    html: emailContent
+const sendEmailViaPython = (recipientEmail, resetUrl) => {
+  return new Promise((resolve, reject) => {
+    const pythonScript = path.join(__dirname, '../../send_email.py');
+    const command = `python3 "${pythonScript}" "${recipientEmail}" "${resetUrl}"`;
+    
+    exec(command, (error, stdout, stderr) => {
+      if (error) {
+        console.error('Python script error:', error);
+        reject(error);
+      } else {
+        console.log('Python script output:', stdout);
+        if (stderr) console.log('Python script stderr:', stderr);
+        resolve(stdout);
+      }
+    });
   });
 };
 
@@ -145,7 +133,7 @@ exports.forgotPassword = async (req, res) => {
       <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Reset Your EcoCircle Password</title>
+        <title>Reset Your EcoWaste Password</title>
         <!--[if mso]>
         <noscript>
           <xml>
@@ -170,7 +158,7 @@ exports.forgotPassword = async (req, res) => {
               <div style="background: rgba(255, 255, 255, 0.2); width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(10px);">
                 <span style="color: white; font-size: 32px; font-weight: bold;">🌱</span>
               </div>
-              <h1 style="color: white; margin: 0; font-size: 32px; font-weight: 700; letter-spacing: -0.5px;">EcoCircle</h1>
+              <h1 style="color: white; margin: 0; font-size: 32px; font-weight: 700; letter-spacing: -0.5px;">EcoWaste</h1>
               <p style="color: rgba(255, 255, 255, 0.9); margin: 8px 0 0 0; font-size: 16px; font-weight: 400;">Sustainable Waste Management Platform</p>
             </div>
           </div>
@@ -183,7 +171,7 @@ exports.forgotPassword = async (req, res) => {
             </div>
             
             <p style="color: #4b5563; line-height: 1.7; margin-bottom: 30px; font-size: 16px; text-align: center;">
-              We received a request to reset your password for your EcoCircle account. Click the button below to create a new password.
+              We received a request to reset your password for your EcoWaste account. Click the button below to create a new password.
             </p>
             
             <p style="color: #6b7280; line-height: 1.6; margin-bottom: 35px; font-size: 14px; text-align: center;">
@@ -239,7 +227,7 @@ exports.forgotPassword = async (req, res) => {
           <!-- Footer -->
           <div style="background: #1f2937; padding: 30px; text-align: center;">
             <div style="margin-bottom: 20px;">
-              <span style="color: #10b981; font-size: 24px; font-weight: bold;">🌱 EcoCircle</span>
+              <span style="color: #10b981; font-size: 24px; font-weight: bold;">🌱 EcoWaste</span>
             </div>
             <p style="color: #9ca3af; font-size: 14px; margin: 0 0 15px 0; line-height: 1.5;">
               Making waste management sustainable and efficient for a better tomorrow.
@@ -250,7 +238,7 @@ exports.forgotPassword = async (req, res) => {
               <a href="#" style="color: #6b7280; text-decoration: none; margin: 0 15px; font-size: 12px;">Unsubscribe</a>
             </div>
             <p style="color: #6b7280; font-size: 12px; margin: 15px 0 0 0;">
-              © 2024 EcoCircle by SuperFresh Innovation. All rights reserved.
+              © 2024 EcoWaste by SuperFresh Innovation. All rights reserved.
             </p>
           </div>
         </div>
@@ -282,7 +270,7 @@ exports.forgotPassword = async (req, res) => {
         console.log(`📧 Sending email via Python script to: ${email}`);
         
         // Use the working Python script to send email
-        const result = await sendEmailViaHostinger(email, resetUrl);
+        const result = await sendEmailViaPython(email, resetUrl);
         
         console.log('✅ Password reset email sent successfully via Python!');
         console.log('   Python script completed successfully');

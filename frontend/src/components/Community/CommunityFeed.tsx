@@ -75,7 +75,7 @@ const CommunityFeed: React.FC = () => {
     sortBy: 'recent'
   })
 
-  const observerRef = useRef<IntersectionObserver>()
+  const observerRef = useRef<IntersectionObserver>(null)
   const lastPostElementRef = useCallback((node: HTMLDivElement) => {
     if (loadingMore) return
     if (observerRef.current) observerRef.current.disconnect()
@@ -148,13 +148,13 @@ const CommunityFeed: React.FC = () => {
             posts: [
               {
                 id: 1,
-                title: "Welcome to the EcoWaste Community!",
+                title: "Welcome to the EcoCircle Community!",
                 content: "This is a sample post. The community features are being set up. Stay tuned for more eco-friendly content!",
                 post_type: "general",
                 category: "community_action",
                 tags: ["welcome", "community"],
                 media_urls: [],
-                author_name: "EcoWaste Team",
+                author_name: "EcoCircle Team",
                 author_type: "admin",
                 is_local_event: false,
                 is_featured: true,
@@ -248,7 +248,7 @@ const CommunityFeed: React.FC = () => {
 
   const handlePostInteraction = async (postId: number, type: string) => {
     try {
-      await community.recordInteraction(postId, type)
+      await community.recordInteraction(String(postId), type)
       
       // Update local state optimistically
       setPosts(prev => prev.map(post => {

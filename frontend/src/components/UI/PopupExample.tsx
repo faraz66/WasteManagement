@@ -98,7 +98,7 @@ const PopupExample: React.FC = () => {
   return (
     <div className="p-6 max-w-4xl mx-auto">
       <div className="mb-8">
-        <h1 className="text-2xl font-bold gradient-text mb-2">EcoWaste Popup System</h1>
+        <h1 className="text-2xl font-bold gradient-text mb-2">EcoCircle Popup System</h1>
         <p className="text-slate-600">Modern, accessible popups integrated with your waste management workflow</p>
       </div>
 
